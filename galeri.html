@@ -6,29 +6,146 @@
   <title>Galeri - Kelas 10C | MAN Kota Tegal</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root{--accent:#166534}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,#f7fff9,#f0fff6);color:#07311b}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:12px 24px}
-    nav img{height:48px;border-radius:8px;background:#fff;padding:4px}
-    nav a{color:#0b3a22;text-decoration:none;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.7);font-weight:600}
-    .container{max-width:1100px;margin:0 auto;padding:28px}
-    header{background:linear-gradient(90deg,#dff7e6,#e6fff1);border-radius:12px;padding:18px;margin-bottom:18px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:16px}
-    .placeholder{
-      border-radius:12px;padding:14px;background:rgba(255,255,255,0.95);box-shadow:0 8px 24px rgba(7,49,27,0.04);text-align:center
+    :root {
+      --accent: #166534;
+      --bg-light: #f5fff8;
+      --card-bg: rgba(255, 255, 255, 0.94);
     }
-    .placeholder p{margin:8px 0 0;color:#274a33}
-    .note{font-size:13px;color:#2b6b3a;opacity:0.9}
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #f7fff9, #f0fff6);
+      color: #07311b;
+    }
+
+    /* 🔝 Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background: transparent;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+    }
+    nav img {
+      height: 48px;
+      border-radius: 8px;
+      background: #fff;
+      padding: 4px;
+    }
+    nav a {
+      color: #0b3a22;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    nav a:hover {
+      background: #d4f5dd;
+      transform: translateY(-3px);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #dff7e6, #e6fff1);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 28px auto 16px;
+      max-width: 1100px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(7,49,27,0.05);
+    }
+    header h1 {
+      margin: 0;
+      color: var(--accent);
+    }
+    header p {
+      margin: 6px 0 0;
+      color: #1f6f45;
+      font-size: 15px;
+    }
+
+    /* Galeri Grid */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    /* Kartu foto */
+    .placeholder {
+      background: var(--card-bg);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(7,49,27,0.05);
+      overflow: hidden;
+      text-align: center;
+      padding: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeZoom 0.8s ease forwards;
+    }
+    .placeholder:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 26px rgba(7,49,27,0.08);
+    }
+    .placeholder img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeZoom 0.8s ease forwards;
+    }
+    .placeholder p {
+      margin: 8px 0 4px;
+      color: #274a33;
+      font-size: 14px;
+    }
+
+    /* 🌿 Animasi fade + zoom */
+    @keyframes fadeZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      color: #274a33;
+      background: transparent;
+      margin-top: 30px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
-  <nav class="container">
+
+  <!-- 🔝 Navbar -->
+  <nav>
     <div style="display:flex;align-items:center;gap:12px">
       <img src="logo-man.png" alt="Logo MAN Kota Tegal">
-      <div style="font-weight:700">MAN Kota Tegal</div>
+      <div style="font-weight:700;">MAN Kota Tegal</div>
     </div>
-    <div style="display:flex;gap:8px">
+    <div style="display:flex;gap:10px;">
       <a href="index.html">Beranda</a>
       <a href="struktur.html">Struktur</a>
       <a href="daftar.html">Daftar Siswa</a>
@@ -36,28 +153,48 @@
     </div>
   </nav>
 
+  <!-- 🏞️ Header -->
+  <header>
+    <h1>Galeri Kelas 10C</h1>
+    <p>Dokumentasi kegiatan kelas & momen kebersamaan di MAN Kota Tegal 🌿</p>
+  </header>
+
+  <!-- 📸 Galeri Foto -->
   <main class="container">
-    <header>
-      <h1>Galeri Kelas 10C</h1>
-      <p style="margin:6px 0 0;color:#1f6f45">Tambahkan foto kegiatan kelas di sini — cara mudah: simpan semua foto di folder /images lalu gunakan tag &lt;img src="images/nama.jpg"&gt; pada blok galeri.</p>
-    </header>
-
     <section class="grid" aria-label="Galeri Foto">
+
+      <!-- 🌼 Contoh foto (ganti dengan milikmu di folder /images) -->
       <div class="placeholder">
-        <strong>Belum ada foto</strong>
-        <p class="note">Untuk menambahkan: buat folder <code>images/</code> dan letakkan foto (contoh: <code>images/ekskul1.jpg</code>), lalu edit file <code>galeri.html</code> untuk menambahkan tag &lt;img&gt;.</p>
+        <img src="latar.jpg" alt="Upacara">
+        <p>Upacara</p>
       </div>
 
-      <!-- Contoh format foto (hapus komentar & ganti nama file jika menambahkan gambar): -->
-      <!--
       <div class="placeholder">
-        <img src="images/ekskul1.jpg" style="width:100%; border-radius:10px; display:block;">
-        <p>Judul foto / Keterangan singkat</p>
+        <img src="images/tugas-kelompok.jpg" alt="Belajar Kelompok">
+        <p>Kegiatan Belajar Kelompok</p>
       </div>
-      -->
+
+      <div class="placeholder">
+        <img src="images/foto-kelas.jpg" alt="Foto Kelas">
+        <p>Foto Bersama Kelas 10C</p>
+      </div>
+
+      <div class="placeholder">
+        <img src="images/kemah.jpg" alt="Kemah pramuka">
+        <p>Kemah pramuka</p>
+      </div>
+
+      <div class="placeholder">
+        <img src="images/renang.jpg" alt="Renang">
+	<p>Renang</p>
+      </div>
+
     </section>
   </main>
 
-  <footer style="text-align:center;padding:16px;color:#274a33">© 2025 Kelas 10C — MAN Kota Tegal</footer>
+  <footer>
+    © 2025 Kelas 10C — Madrasah Aliyah Negeri Kota Tegal
+  </footer>
+
 </body>
 </html>
