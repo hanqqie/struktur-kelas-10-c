@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galeri - Kelas 10C | MAN Kota Tegal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#166534}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,#f7fff9,#f0fff6);color:#07311b}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:12px 24px}
+    nav img{height:48px;border-radius:8px;background:#fff;padding:4px}
+    nav a{color:#0b3a22;text-decoration:none;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.7);font-weight:600}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{background:linear-gradient(90deg,#dff7e6,#e6fff1);border-radius:12px;padding:18px;margin-bottom:18px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:16px}
+    .placeholder{
+      border-radius:12px;padding:14px;background:rgba(255,255,255,0.95);box-shadow:0 8px 24px rgba(7,49,27,0.04);text-align:center
+    }
+    .placeholder p{margin:8px 0 0;color:#274a33}
+    .note{font-size:13px;color:#2b6b3a;opacity:0.9}
+  </style>
+</head>
+<body>
+  <nav class="container">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="logo-man.png" alt="Logo MAN Kota Tegal">
+      <div style="font-weight:700">MAN Kota Tegal</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <a href="index.html">Beranda</a>
+      <a href="struktur.html">Struktur</a>
+      <a href="daftar.html">Daftar Siswa</a>
+      <a href="galeri.html">Galeri</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header>
+      <h1>Galeri Kelas 10C</h1>
+      <p style="margin:6px 0 0;color:#1f6f45">Tambahkan foto kegiatan kelas di sini — cara mudah: simpan semua foto di folder /images lalu gunakan tag &lt;img src="images/nama.jpg"&gt; pada blok galeri.</p>
+    </header>
+
+    <section class="grid" aria-label="Galeri Foto">
+      <div class="placeholder">
+        <strong>Belum ada foto</strong>
+        <p class="note">Untuk menambahkan: buat folder <code>images/</code> dan letakkan foto (contoh: <code>images/ekskul1.jpg</code>), lalu edit file <code>galeri.html</code> untuk menambahkan tag &lt;img&gt;.</p>
+      </div>
+
+      <!-- Contoh format foto (hapus komentar & ganti nama file jika menambahkan gambar): -->
+      <!--
+      <div class="placeholder">
+        <img src="images/ekskul1.jpg" style="width:100%; border-radius:10px; display:block;">
+        <p>Judul foto / Keterangan singkat</p>
+      </div>
+      -->
+    </section>
+  </main>
+
+  <footer style="text-align:center;padding:16px;color:#274a33">© 2025 Kelas 10C — MAN Kota Tegal</footer>
+</body>
+</html>
