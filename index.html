@@ -6,188 +6,190 @@
   <title>Beranda - Kelas 10C | MAN Kota Tegal</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --green-1:#e8fff0;
-      --green-2:#dff7e6;
-      --accent:#166534;
-      --card-bg: rgba(255,255,255,0.9);
+    :root {
+      --accent: #166534;
+      --card-bg: rgba(255,255,255,0.95);
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:'Poppins',sans-serif;
-      color:#0f1720;
-      background: linear-gradient(180deg, rgba(239,253,245,0.7), rgba(240,255,250,0.9));
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+    * { box-sizing: border-box }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #0f1720;
+      background: linear-gradient(180deg, #f0fff9, #e8fff0);
     }
 
-    /* subtle background image */
-    .hero{
-      min-height:48vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:48px 20px;
-      position:relative;
-      overflow:hidden;
-      background-image: latar.jpg;
-      background-size:cover;
-      background-position:center;
-    }
-    /* overlay to soften */
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: linear-gradient(180deg, rgba(233,250,238,0.85), rgba(245,255,250,0.75));
-      mix-blend-mode: multiply;
-    }
-
-    /* navbar */
-    nav{
-      width:100%;
-      position:sticky;
-      top:0;
-      z-index:60;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:10px 24px;
+    nav {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 24px;
       backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.7);
     }
-    nav .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
+    nav .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    nav img{height:52px; width:auto; border-radius:8px; background:#fff; padding:4px}
-    .nav-links{
-      display:flex;
-      gap:12px;
-      align-items:center;
+    nav img {
+      height: 52px;
+      border-radius: 8px;
+      background: #fff;
+      padding: 4px;
     }
-    .nav-links a{
-      text-decoration:none;
-      color:#07311b;
-      padding:8px 14px;
-      border-radius:999px;
-      font-weight:600;
-      transition:all .18s ease;
+    .nav-links {
+      display: flex;
+      gap: 12px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #07311b;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
       background: rgba(255,255,255,0.65);
-      box-shadow:0 2px 8px rgba(7,49,27,0.05);
+      box-shadow: 0 2px 8px rgba(7,49,27,0.05);
+      transition: all .18s ease;
     }
-    .nav-links a:hover{transform:translateY(-3px); box-shadow:0 6px 18px rgba(7,49,27,0.08)}
-
-    .container{
-      max-width:1100px;
-      margin:0 auto;
-      width:100%;
+    .nav-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(7,49,27,0.08);
     }
 
-    .hero-card{
-      position:relative;
-      z-index:2;
-      max-width:980px;
-      width:100%;
-      background:var(--card-bg);
-      border-radius:14px;
-      padding:28px;
-      box-shadow:0 10px 30px rgba(7,49,27,0.08);
-      display:grid;
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(233,250,238,0.2), rgba(245,255,250,0.1));
+    }
+    .hero-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--card-bg);
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(7,49,27,0.08);
+      max-width: 960px;
+      width: 90%;
+      display: grid;
       grid-template-columns: 1fr;
-      gap:12px;
-      text-align:center;
+      text-align: center;
+      z-index: 2;
     }
-    .hero-card h1{
-      margin:0;
-      color:var(--accent);
-      font-size:28px;
-      line-height:1.05;
+    .hero-card h1 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 28px;
     }
-    .hero-card p.lead{
-      margin:10px 0 0;
-      color:#134e30;
-      opacity:0.9;
-      font-weight:500;
+    .hero-card p.lead {
+      margin: 10px 0 0;
+      color: #134e30;
+      font-weight: 500;
     }
-    .hero-meta{
-      margin-top:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
+    .hero-meta {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-    .btn{
-      background:#1f7f43;
-      color:white;
-      padding:10px 16px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow:0 6px 18px rgba(31,127,67,0.12);
+    .btn {
+      background: #1f7f43;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(31,127,67,0.12);
     }
-    .btn.ghost{
-      background:transparent;
-      color:#165f3a;
-      border:1px solid rgba(22,95,58,0.08);
-      box-shadow:none;
+    .btn.ghost {
+      background: transparent;
+      color: #165f3a;
+      border: 1px solid rgba(22,95,58,0.08);
+      box-shadow: none;
     }
 
-    /* content sections */
-    .section{
-      padding:44px 20px;
+    .section {
+      padding: 44px 20px;
     }
-    .welcome{
-      max-width:980px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:18px;
-      align-items:center;
-      text-align:left;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .card-grid{
-      display:grid;
+    .welcome {
+      display: grid;
+      gap: 18px;
+    }
+    .card-grid {
+      display: grid;
       grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap:18px;
-      margin-top:14px;
+      gap: 18px;
+      margin-top: 14px;
     }
-    .small-card{
-      background:var(--card-bg);
-      border-radius:12px;
-      padding:18px;
-      box-shadow:0 6px 20px rgba(7,49,27,0.05);
+    .small-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 6px 20px rgba(7,49,27,0.05);
     }
-    .small-card h3{margin:0;color:var(--accent)}
-    .small-card p{margin:8px 0 0;color:#2d5236; font-size:14px}
+    .small-card h3 {
+      margin: 0;
+      color: var(--accent);
+    }
+    .small-card p {
+      margin: 8px 0 0;
+      color: #2d5236;
+      font-size: 14px;
+    }
 
-    footer{
-      padding:18px 10px;
-      text-align:center;
-      color:#274a33;
-      background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(240,255,250,0.9));
-      margin-top:28px;
+    footer {
+      padding: 18px 10px;
+      text-align: center;
+      color: #274a33;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(240,255,250,0.9));
+      margin-top: 28px;
     }
 
-    /* responsive */
-    @media (min-width:720px){
-      .hero-card{grid-template-columns: 1fr 360px; text-align:left; align-items:center}
-      .hero-card .left{padding-right:20px}
-      .hero-card .right{text-align:center}
+    @media (min-width: 720px) {
+      .hero-card {
+        grid-template-columns: 1fr 360px;
+        text-align: left;
+        align-items: center;
+      }
+      .hero-card .left {
+        padding-right: 20px;
+      }
+      .hero-card .right {
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="container" aria-label="Main navigation">
+  <nav class="container">
     <div class="brand">
       <img src="logo-man.png" alt="Logo MAN Kota Tegal">
       <div style="font-weight:700; color:#07311b">MAN Kota Tegal</div>
     </div>
-
     <div class="nav-links">
       <a href="index.html">Beranda</a>
       <a href="struktur.html">Struktur</a>
@@ -196,20 +198,19 @@
     </div>
   </nav>
 
-  <!-- HERO with soft background image -->
-  <section class="hero" aria-hidden="false">
+  <section class="hero">
+    <img src="images/kelas10c.jpg" alt="Foto siswa kelas 10C">
+    <div class="hero-overlay"></div>
     <div class="hero-card container">
       <div class="left">
         <h1>Selamat datang di Situs Kelas <span style="color:#0a6b3a">10C</span></h1>
         <p class="lead">Madrasah Aliyah Negeri Kota Tegal — tempat belajar, berkarya, dan tumbuh bersama.</p>
-
-        <div class="hero-meta" role="navigation" aria-label="Quick links">
+        <div class="hero-meta">
           <a class="btn" href="struktur.html">Lihat Struktur Kelas</a>
           <a class="btn ghost" href="daftar.html">Lihat Daftar Siswa</a>
         </div>
       </div>
-
-      <div class="right" style="padding-top:6px;">
+      <div class="right">
         <p style="margin:0; color:#165f3a; font-weight:600">Motivasi Kelas</p>
         <p style="margin-top:8px; color:#134e30; font-size:14px; line-height:1.4">
           “Belajar dengan niat, bekerja dengan hati — bersama kita raih prestasi dan akhlaq mulia.”  
@@ -221,7 +222,6 @@
     </div>
   </section>
 
-  <!-- Brief welcome + cards -->
   <section class="section">
     <div class="welcome container">
       <h2 style="color:var(--accent); margin:0 0 6px 0">Tentang Kelas 10C</h2>
@@ -256,3 +256,4 @@
 
 </body>
 </html>
+
