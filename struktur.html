@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Struktur Kelas 10C | MAN Kota Tegal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #d8f0ff, #e9f7ff);
+      color: #062d45;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    nav img {
+      height: 50px;
+      border-radius: 12px;
+      background: white;
+      padding: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #06324f;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.75);
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      transform: translateY(-3px);
+      background: #cdeaff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #06324f;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      background: white;
+      border-radius: 12px;
+      width: 160px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    .mobile-menu a {
+      padding: 14px 20px;
+      display: block;
+      text-decoration: none;
+      color: #06324f;
+      border-bottom: 1px solid #e3efff;
+    }
+
+    .mobile-menu a:hover { background: #d4edff; }
+
+    @media(max-width:768px){
+      .nav-links { display:none; }
+      .menu-toggle { display:block; }
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+    header h1 { color:#0b4a78; }
+
+    /* Struktur */
+    .grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding:20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+
+    .card h3 { color:#0b4a78; }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+      background:#e7f4ff;
+      color:#06324f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div style="display:flex;align-items:center;gap:14px">
+      <img src="logo.jpg">
+      <div style="font-weight:700;color:#06324f">TENCRE DIBLE — 10C</div>
+    </div>
+
+    <button class="menu-toggle" id="menuBtn">☰</button>
+
+    <div class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="struktur.html">Struktur</a>
+      <a href="daftar.html">Daftar Siswa</a>
+      <a href="galeri.html">Galeri</a>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Beranda</a>
+      <a href="struktur.html">Struktur</a>
+      <a href="daftar.html">Daftar Siswa</a>
+      <a href="galeri.html">Galeri</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Struktur Organisasi Kelas 10C</h1>
+    <p>Madrasah Aliyah Negeri Kota Tegal</p>
+  </header>
+
+  <section class="grid">
+
+    <div class="card"><h3>Wali Kelas</h3><p>Pak Muhammad Dzikrullah</p></div>
+
+    <div class="card"><h3>Ketua Kelas</h3><p>Muhammad Royyan Arbian</p></div>
+
+    <div class="card"><h3>Wakil Ketua</h3><p>Vikri Mussyafa</p></div>
+
+    <div class="card"><h3>Sekretaris</h3><p>Qaid Ibad Efendi</p></div>
+
+    <div class="card"><h3>Bendahara</h3><p>Nadia Yogi Karisma Putri</p></div>
+
+    <div class="card"><h3>Kebersihan</h3><p>Jeki</p></div>
+
+  </section>
+
+  <footer>
+    © 2025 Kelas 10C — MAN Kota Tegal
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.onclick = () => {
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    };
+  </script>
+
+</body>
+</html>
