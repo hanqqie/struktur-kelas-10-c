@@ -53,19 +53,104 @@
   header{text-align:center;padding:50px 20px;}
   header h1{color:#0b4a78;}
 
-  table{
-    width:90%;margin:0 auto 40px;border-collapse:collapse;background:white;
-    border-radius:12px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,0.08);
+  /* Spotify-style container */
+  .students-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
   }
-  th{
-    background:#0c75b9;padding:14px;color:white;text-align:left;
+
+  /* Spotify-style card */
+  .student-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 180px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
-  td{padding:12px 16px;color:#062d45;}
-  tr:nth-child(even){background:#f0f7ff;}
-  tr:hover{background:#d4edff;}
+
+  .student-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(11, 74, 120, 0.15);
+    background: #f0f7ff;
+  }
+
+  .student-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #0c75b9, #8cc8ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 60px;
+    font-weight: 600;
+  }
+
+  .student-info {
+    padding: 16px;
+  }
+
+  .student-name {
+    font-weight: 600;
+    color: #06324f;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .student-nis {
+    font-size: 12px;
+    color: #0c75b9;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .student-role {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #e7f4ff;
+    color: #0c75b9;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
 
   footer{
     text-align:center;padding:20px;background:#e7f4ff;color:#06324f;margin-top:20px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .student-card {
+      width: 160px;
+    }
+    
+    .students-container {
+      gap: 15px;
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .student-card {
+      width: 140px;
+    }
+    
+    .student-image {
+      height: 140px;
+      font-size: 50px;
+    }
   }
 </style>
 
@@ -100,46 +185,9 @@
   <p>Madrasah Aliyah Negeri Kota Tegal</p>
 </header>
 
-<table>
-  <tr>
-    <th>NIS</th>
-    <th>Nama Lengkap</th>
-    <th>Keterangan</th>
-  </tr>
-
-  <tr><td>9855</td><td>ALIFA PUTRI SALSABILA</td><td>Anggota</td></tr>
-  <tr><td>9859</td><td>ALTHIFA AROFATI ROCHIMAH</td><td>Anggota</td></tr>
-  <tr><td>9897</td><td>DAFFA RADHIYA HAQQI ROFI'I</td><td>Anggota</td></tr>
-  <tr><td>9912</td><td>DZAKY ABDUL HAFIZ</td><td>Anggota</td></tr>
-  <tr><td>9920</td><td>FADILAH</td><td>Anggota</td></tr>
-  <tr><td>9924</td><td>FAIRUZ YAFI' ATS TSAQIF</td><td>Anggota</td></tr>
-  <tr><td>9933</td><td>FATHIAN GHIFARIAL MUSYAFFA</td><td>Anggota</td></tr>
-  <tr><td>9954</td><td>HAIQAL INSANI ISZA</td><td>Anggota</td></tr>
-  <tr><td>9960</td><td>HILAL LABIB ABYAN</td><td>Anggota</td></tr>
-  <tr><td>10188</td><td>HILMAN ALI NASRUL HAQ</td><td>Anggota</td></tr>
-  <tr><td>9971</td><td>JIHAN AYU AMALIA</td><td>Anggota</td></tr>
-  <tr><td>9976</td><td>KAYLA MAULIDA SAKINAH</td><td>Anggota</td></tr>
-  <tr><td>9997</td><td>MAULIDA SALSABILLA AZ ZAHRA</td><td>Anggota</td></tr>
-  <tr><td>10004</td><td>MIRZA HAFIDZ AZHALLAH</td><td>Anggota</td></tr>
-  <tr><td>10006</td><td>MOCHAMMAD ASRAF DWI RASYA</td><td>Anggota</td></tr>
-  <tr><td>10186</td><td>MUHAMMAD KAISAR ROYYAN</td><td>Anggota</td></tr>
-  <tr><td>10044</td><td>MUHAMMAD ROYYAN ARBIAN</td><td>Ketua Kelas</td></tr>
-  <tr><td>10058</td><td>NABIL AQUILLA ANNUR</td><td>Anggota</td></tr>
-  <tr><td>10060</td><td>NADHILAH NUR SHADRINA</td><td>Anggota</td></tr>
-  <tr><td>10061</td><td>NADIA YOGI KARISMA PUTRI</td><td>Bendahara</td></tr>
-  <tr><td>10067</td><td>NAJWA FAUZIYYAH TRI YANINGTYAS</td><td>Anggota</td></tr>
-  <tr><td>10079</td><td>NISFI LAILY MAULIDA</td><td>Anggota</td></tr>
-  <tr><td>10084</td><td>NUR HABIBAH DAPA</td><td>Anggota</td></tr>
-  <tr><td>10091</td><td>PUTRI AZIZAH RAHMATULLAH</td><td>Anggota</td></tr>
-  <tr><td>10092</td><td>QAID IBAD EFENDI</td><td>Sekretaris</td></tr>
-  <tr><td>10098</td><td>RAMADIANESA HADININGRAT</td><td>Anggota</td></tr>
-  <tr><td>10106</td><td>RIHADATUL 'AISY</td><td>Anggota</td></tr>
-  <tr><td>10119</td><td>SALWA AZZAHRO</td><td>Anggota</td></tr>
-  <tr><td>10137</td><td>SITI ILMIRA DIANARINI</td><td>Anggota</td></tr>
-  <tr><td>10151</td><td>TAUFIQ ARRAHMAN HIDAYAHTULLOH</td><td>Anggota</td></tr>
-  <tr><td>10160</td><td>VIKRI MUSSYAFA</td><td>Wakil Ketua</td></tr>
-
-</table>
+<div class="students-container">
+  <!-- Kartu siswa akan diisi oleh JavaScript -->
+</div>
 
 <footer>© 2025 Kelas 10C — MAN Kota Tegal</footer>
 
@@ -147,12 +195,79 @@
 const btn=document.getElementById('menuBtn');
 const menu=document.getElementById('mobileMenu');
 btn.onclick=()=>menu.style.display=menu.style.display==="flex"?"none":"flex";
+
+// Data siswa
+const students = [
+  {nis: "9855", name: "ALIFA PUTRI SALSABILA", role: "Anggota"},
+  {nis: "9859", name: "ALTHIFA AROFATI ROCHIMAH", role: "Anggota"},
+  {nis: "9897", name: "DAFFA RADHIYA HAQQI ROFI'I", role: "Anggota"},
+  {nis: "9912", name: "DZAKY ABDUL HAFIZ", role: "Anggota"},
+  {nis: "9920", name: "FADILAH", role: "Anggota"},
+  {nis: "9924", name: "FAIRUZ YAFI' ATS TSAQIF", role: "Anggota"},
+  {nis: "9933", name: "FATHIAN GHIFARIAL MUSYAFFA", role: "Anggota"},
+  {nis: "9954", name: "HAIQAL INSANI ISZA", role: "Anggota"},
+  {nis: "9960", name: "HILAL LABIB ABYAN", role: "Anggota"},
+  {nis: "10188", name: "HILMAN ALI NASRUL HAQ", role: "Anggota"},
+  {nis: "9971", name: "JIHAN AYU AMALIA", role: "Anggota"},
+  {nis: "9976", name: "KAYLA MAULIDA SAKINAH", role: "Anggota"},
+  {nis: "9997", name: "MAULIDA SALSABILLA AZ ZAHRA", role: "Anggota"},
+  {nis: "10004", name: "MIRZA HAFIDZ AZHALLAH", role: "Anggota"},
+  {nis: "10006", name: "MOCHAMMAD ASRAF DWI RASYA", role: "Anggota"},
+  {nis: "10186", name: "MUHAMMAD KAISAR ROYYAN", role: "Anggota"},
+  {nis: "10044", name: "MUHAMMAD ROYYAN ARBIAN", role: "Anggota"},
+  {nis: "10058", name: "NABIL AQUILLA ANNUR", role: "Anggota"},
+  {nis: "10060", name: "NADHILAH NUR SHADRINA", role: "Anggota"},
+  {nis: "10061", name: "NADIA YOGI KARISMA PUTRI", role: "Anggota"},
+  {nis: "10067", name: "NAJWA FAUZIYYAH TRI YANINGTYAS", role: "Anggota"},
+  {nis: "10079", name: "NISFI LAILY MAULIDA", role: "Anggota"},
+  {nis: "10084", name: "NUR HABIBAH DAPA", role: "Anggota"},
+  {nis: "10091", name: "PUTRI AZIZAH RAHMATULLAH", role: "Anggota"},
+  {nis: "10092", name: "QAID IBAD EFENDI", role: "Anggota"},
+  {nis: "10098", name: "RAMADIANESA HADININGRAT", role: "Anggota"},
+  {nis: "10106", name: "RIHADATUL 'AISY", role: "Anggota"},
+  {nis: "10119", name: "SALWA AZZAHRO", role: "Anggota"},
+  {nis: "10137", name: "SITI ILMIRA DIANARINI", role: "Anggota"},
+  {nis: "10151", name: "TAUFIQ ARRAHMAN HIDAYAHTULLOH", role: "Anggota"},
+  {nis: "10160", name: "VIKRI MUSSYAFA", role: "Anggota"}
+];
+
+// Fungsi untuk mendapatkan inisial dari nama
+function getInitials(name) {
+  return name
+    .split(' ')
+    .map(word => word[0])
+    .join('')
+    .substring(0, 2)
+    .toUpperCase();
+}
+
+// Fungsi untuk membuat kartu siswa
+function createStudentCard(student) {
+  const card = document.createElement('div');
+  card.className = 'student-card';
+  
+  const initials = getInitials(student.name);
+  
+  card.innerHTML = `
+    <div class="student-image">${initials}</div>
+    <div class="student-info">
+      <div class="student-name" title="${student.name}">${student.name}</div>
+      <div class="student-nis">NIS: ${student.nis}</div>
+      <div class="student-role">${student.role}</div>
+    </div>
+  `;
+  
+  return card;
+}
+
+// Render semua kartu siswa
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.students-container');
+  students.forEach(student => {
+    container.appendChild(createStudentCard(student));
+  });
+});
 </script>
 
 </body>
 </html>
-
-
-
-
-
